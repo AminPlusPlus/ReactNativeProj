@@ -1,7 +1,7 @@
 import React from 'react';
 import User from './model/User.js';
 
-import { StyleSheet, Text, View,Image, Button } from 'react-native';
+import { StyleSheet, Text, View,Image, Button,TouchableOpacity } from 'react-native';
 
 export default class App extends React.Component {
 
@@ -16,8 +16,12 @@ export default class App extends React.Component {
        <Image style = {styles.logo} source = {require('./img/shield.png')}/>
        <Text style = {styles.mainText}> {sas.name} </Text>
        </View>
-
-        <Button style = {styles.btn} onPress = {onPress} title = "HI" />
+       <TouchableOpacity
+          style={styles.logButton}
+          onPress={onPress}
+          underlayColor='#fff'>
+          <Text style={styles.loginText}>Login</Text>
+      </TouchableOpacity>
       </View>
     );
   }
@@ -36,7 +40,7 @@ const styles = StyleSheet.create({
   topView : {
     backgroundColor : '#1a5089',
     alignItems : 'center',
-    marginTop: 0,
+    marginTop: 20,
     marginLeft: 0,
     marginRight: 0,
   },
@@ -50,9 +54,24 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginTop: 10,
   },
-  btn : {
-    color : '#841584',
-    marginTop : 20
-  }
+
+  logButton : {
+    marginRight:40,
+    marginLeft:40,
+    marginTop:20,
+    paddingTop:10,
+    paddingBottom:10,
+    backgroundColor:'#1E6738',
+    borderRadius:10,
+    borderWidth: 1,
+    borderColor: '#fff'
+  },
+  loginText:{
+    color:'#fff',
+    textAlign:'center',
+    fontSize: 20,
+    paddingLeft : 10,
+    paddingRight : 10
+}
 
 });

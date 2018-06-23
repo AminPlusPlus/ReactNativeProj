@@ -1,6 +1,6 @@
 export default class User 
 {
-    constructor (name)
+    constructor (name,s)
     {
         this.name = name;
     }
